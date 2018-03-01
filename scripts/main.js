@@ -1,6 +1,11 @@
 var DETAIL_IMAGE_SELECTOR = "[data-image-role=\"target\"]";
 var DETAIL_TITLE_SELECTOR = "[data-image-role=\"title\"]";
 var THUMBNAIL_LINK_SELECTOR = "[data-image-role=\"trigger\"]";
+var PREVIOUS_BUTTON = "[name=\"previousButton\"]";
+var NEXT_BUTTON = "[name=\"nextButton\"]";
+
+var btnPrevious = document.querySelector(PREVIOUS_BUTTON);
+var btnNext = document.querySelector(NEXT_BUTTON);
 
 function setDetails(imageUrl, titleText) {
   'use strict';
@@ -45,6 +50,33 @@ function initializeEvents() {
   'use strict';
   var thumbnails = getThumbnailsArray();
   thumbnails.forEach(addThumbClickHandler);
+  //prevButtonClickHandler(thumbnails);
 }
+
+//click event handler for previous button
+btnPrevious.addEventListener('click', function() {
+  var thumbnails = getThumbnailsArray();
+  var detailImage = document.querySelector(DETAIL_IMAGE_SELECTOR);
+  var imgId = detailImage.getAttribute('data-image-id');
+  if(imgId > 0) {
+    var newImgId = +imgId - 1;
+    detailImage.setAttribute('data-image-id', newImgId);
+    setDetailsFromThumb(thumbnails[newImgId]);
+    //console.log(detailImage.getAttribute('data-image-id'));
+  }
+});
+
+//click event handler for next button
+btnNext.addEventListener('click', function() {
+  var thumbnails = getThumbnailsArray();
+  var detailImage = document.querySelector(DETAIL_IMAGE_SELECTOR);
+  var imgId = detailImage.getAttribute('data-image-id');
+  if(imgId < (thumbnails.length - 1)) {
+    var newImgId = +imgId + 1;
+    detailImage.setAttribute('data-image-id', newImgId);
+    setDetailsFromThumb(thumbnails[newImgId]);
+    //console.log(detailImage.getAttribute('data-image-id'));
+  }
+});
 
 initializeEvents();
