@@ -14,6 +14,7 @@ function setDetails(imageUrl, titleText) {
 
   var detailTitle = document.querySelector(DETAIL_TITLE_SELECTOR);
   detailTitle.textContent = titleText;
+
 }
 
 function imageFromThumb(thumbnail) {
@@ -36,7 +37,15 @@ function addThumbClickHandler(thumb) {
   thumb.addEventListener('click', function (event) {
     event.preventDefault();
     setDetailsFromThumb(thumb);
+    setDetailImageId(thumb.getAttribute('data-image-id'));
+    //console.log(thumb.getAttribute('data-image-id'));
   });
+}
+
+//function to set ImageID
+function setDetailImageId(idVal){
+  var detailImage = document.querySelector(DETAIL_IMAGE_SELECTOR);
+  detailImage.setAttribute('data-image-id', idVal);
 }
 
 function getThumbnailsArray() {
