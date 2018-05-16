@@ -1,0 +1,16 @@
+{{navbar-home}}
+<h1>Recipes for: {{ingred}}</h1>
+<ul style="font-weight:bold;color:black;padding-left:50px">
+  {{#each model.hits as |item|}}
+    <li><h1>Title: {{item.recipe.label}}</h1></li>
+    <li>Source: {{item.recipe.url}}</li>
+    <li><img src="{{item.recipe.image}}" />"</li>
+    <li>
+        {{#each item.recipe.ingredientLines as |test|}}
+           <li>{{test}}</li>
+        {{/each}}
+    </li>
+  {{else}}
+  <h1>No Recipes Available!</h1> 
+  {{/each}}
+</ul>

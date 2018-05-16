@@ -1,0 +1,43 @@
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.6); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    display: block;
+}
+
+#btnCook{
+	position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+	display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  padding: 12px 24px;
+  // border: 0px solid #cc5200;
+	border: 0.5px solid #fff;
+  border-radius: 30px;
+	background: transparent;
+  font: normal normal bold 40px courier new;
+  color: #ffffff;
+}
+
+#btnCook:hover,
+#btnCook:focus {
+    border: 0px solid #ff6600;
+		background: linear-gradient(-90deg, #f4690e, #f9ae31);
+    background: -webkit-gradient(-90deg, from(#f4690e), to(#f9ae31));
+    background: -moz-linear-gradient(-90deg, #f4690e, #f9ae31);
+    background: linear-gradient(-90deg, #f4690e, #f9ae31);
+    color: #ffffff;
+    text-decoration: none;
+}

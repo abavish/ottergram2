@@ -1,0 +1,58 @@
+/* CSS for navbar brand logo */
+.navbar-brand {
+  padding: 0px;
+  margin-left: 0px !important;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 0px 25px 5px 25px;
+  width: auto;
+}
+
+.navbar-brand {
+  height: 80px;
+}
+
+// CSS for navbar, includes css for transparency
+.navbar-inverse {
+	background-color:transparent !important;
+	border-color:transparent !important;
+	background-image:none !important;
+	box-shadow:none !important;
+}
+
+.nav >li >a {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	line-height: 30px;
+	background-color:transparent !important;
+	border-color:transparent !important;
+	background-image:none !important;
+	box-shadow:none !important;
+	font-size: 1.5em;
+	width: 100px !important;
+	text-align: center;
+  color: #fff !important;
+}
+
+.nav >li >a:hover,
+.nav >li >a:focus{
+	color: #fff !important;
+	// background-color: #ff7e06 !important;background: linear-gradient(-90deg, #f4690e, #f9ae31);
+  background-color: -webkit-gradient(-90deg, from(#f4690e), to(#f9ae31)) !important;
+  background-color: -moz-linear-gradient(-90deg, #f4690e, #f9ae31) !important;
+  background: linear-gradient(-90deg, #f4690e, #f9ae31) !important;
+	font-weight: 300;
+	border: 0px solid #cc5200;
+  border-radius: 30px;
+}
+
+//css to change background active list item in nav
+.nav >.active{
+  background-color: -webkit-gradient(-90deg, from(#f4690e), to(#f9ae31)) !important;
+  background-color: -moz-linear-gradient(-90deg, #f4690e, #f9ae31) !important;
+  background: linear-gradient(-90deg, #f4690e, #f9ae31) !important;
+  font-weight: 300;
+	border: 0px solid #cc5200;
+  border-radius: 30px;
+}
